@@ -4,7 +4,7 @@ import { Worklet } from 'react-native-bare-kit'
 import b4a from 'b4a'
 
 export default function () {
-  const [response, setReponse] = useState<string | null>(null)
+  const [response, setResponse] = useState<string | null>(null)
 
   useEffect(() => {
     const worklet = new Worklet()
@@ -20,7 +20,7 @@ export default function () {
 
     const { IPC } = worklet
 
-    IPC.on('data', (data: Uint8Array) => setReponse(b4a.toString(data)))
+    IPC.on('data', (data: Uint8Array) => setResponse(b4a.toString(data)))
     IPC.write(b4a.from('Hello from React Native!'))
   }, [])
 

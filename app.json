@@ -25,13 +25,22 @@
       "package": "to.holepunch.bare.expo"
     },
     "plugins": [
-      ["expo-router"],
+      [
+        "expo-router"
+      ],
       [
         "expo-build-properties",
         {
           "android": {
             "minSdkVersion": 29
           }
+        }
+      ],
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": true,
+          "withSQLiteVecExtension": true
         }
       ]
     ]
